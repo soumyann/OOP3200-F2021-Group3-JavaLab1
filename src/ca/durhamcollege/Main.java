@@ -42,9 +42,9 @@ public class Main {
 
             while (scoreTwo==null)
             {
-
                 System.out.printf("Please enter "+ game[i][0]+"'s Score #2: ");
                 scoreTwo = myObj.nextLine();
+
                 try{
                     int temp = Integer.parseInt(scoreTwo);
                     if(!(temp>=0 && temp <=300)) {
@@ -59,6 +59,15 @@ public class Main {
             }
             game[i][2]=scoreTwo;
 
+            System.out.println("-------------------------------------------------");
+        }
+        for (int i=0; i<3; i++)
+        {
+            System.out.println("Score details for "+game[i][0] + ":");
+            System.out.println("Game #1: "+ game[i][1]);
+            System.out.println("Game #2: "+ game[i][2]);
+            float avg= (Float.parseFloat(game[i][1])+Float.parseFloat(game[i][2]))/2;
+            System.out.println("Average for "+ game[i][0]+": "+String.format("%.1f",avg));
             System.out.println("-------------------------------------------------");
         }
 
