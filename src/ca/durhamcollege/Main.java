@@ -15,13 +15,21 @@ public class Main {
         game[1][0] = PLAYER_2;
         game[2][0] = PLAYER_3;
 
+        Scanner myObj = new Scanner(System.in); // Creating Scanner object
         for (int i=0; i<3;i++)
         {
             String scoreOne = null;
-            Scanner myObj = new Scanner(System.in); // Creating Scanner object
+            String scoreTwo = null;
+
             System.out.printf("Please enter "+ game[i][0]+"'s Score #1: ");
             scoreOne = myObj.nextLine();
+            game[i][1]=scoreOne;
 
+            System.out.printf("Please enter "+ game[i][0]+"'s Score #2: ");
+            scoreTwo = myObj.nextLine();
+            game[i][2]=scoreTwo;
+
+            System.out.println("-------------------------------------------------");
         }
 
 
