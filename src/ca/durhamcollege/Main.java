@@ -21,12 +21,42 @@ public class Main {
             String scoreOne = null;
             String scoreTwo = null;
 
-            System.out.printf("Please enter "+ game[i][0]+"'s Score #1: ");
-            scoreOne = myObj.nextLine();
-            game[i][1]=scoreOne;
+            while (scoreOne==null)
+            {
+                System.out.printf("Please enter " + game[i][0] + "'s Score #1: ");
+                scoreOne = myObj.nextLine();
+                try{
+                    int temp = Integer.parseInt(scoreOne);
+                    if(!(temp>=0 && temp <=300)) {
+                        System.out.println("Invalid input. Value between 0 and 300 needed. Please try again");
+                        scoreOne = null;
+                    }
+                }
+                catch (NumberFormatException ex){
+                    System.out.println("Invalid input. Numeric value needed. Please try again");
+                    scoreOne = null;
+                }
+            }
+            game[i][1] = scoreOne;
 
-            System.out.printf("Please enter "+ game[i][0]+"'s Score #2: ");
-            scoreTwo = myObj.nextLine();
+
+            while (scoreTwo==null)
+            {
+
+                System.out.printf("Please enter "+ game[i][0]+"'s Score #2: ");
+                scoreTwo = myObj.nextLine();
+                try{
+                    int temp = Integer.parseInt(scoreTwo);
+                    if(!(temp>=0 && temp <=300)) {
+                        System.out.println("Invalid input. Value between 0 and 300 needed. Please try again");
+                        scoreTwo = null;
+                    }
+                }
+                catch (NumberFormatException ex){
+                    System.out.println("Invalid input. Numeric value needed. Please try again");
+                    scoreTwo = null;
+                }
+            }
             game[i][2]=scoreTwo;
 
             System.out.println("-------------------------------------------------");
